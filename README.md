@@ -55,9 +55,9 @@ This project leverages **TensorFlow Lite MoveNet Lightning** for real-time human
 
 ## 📷 Example Output
 
-| Original View            | Skeleton-Only View        |
-|--------------------------|---------------------------|
-| ![pose](assets/pose.png) | ![skeleton](assets/skeleton.png) |
+![Screenshot 2025-05-28 153718](https://github.com/user-attachments/assets/a2fe2b22-950f-41ee-b092-d97f50ce0329)
+![Screenshot 2025-05-28 153659](https://github.com/user-attachments/assets/d43f151c-5adc-4b07-b7ff-359abb517b85)
+
 
 ---
 
