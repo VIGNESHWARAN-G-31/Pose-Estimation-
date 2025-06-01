@@ -10,7 +10,7 @@ interpreter.allocate_tensors()
 # 2. Load the pre-trained MLP model, scaler, and label encoder
 mlp_model_path = "your_file_path"
 scaler_path = "your_file_path"
-label_encoder_path = r'D:\PoseMate\label_encoder.pkl'
+label_encoder_path = "your_file_path"
 
 with open(mlp_model_path, 'rb') as f:
     mlp_model = pickle.load(f)
