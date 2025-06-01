@@ -9,7 +9,7 @@ interpreter.allocate_tensors()
 
 # 2. Load the pre-trained MLP model, scaler, and label encoder
 mlp_model_path = "your_file_path"
-scaler_path = r'D:\PoseMate\scaler.pkl'
+scaler_path = "your_file_path"
 label_encoder_path = r'D:\PoseMate\label_encoder.pkl'
 
 with open(mlp_model_path, 'rb') as f:
