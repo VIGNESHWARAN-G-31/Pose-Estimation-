@@ -8,7 +8,7 @@ interpreter = tf.lite.Interpreter(model_path=r'D:\PoseMate\movenet_lightning.tfl
 interpreter.allocate_tensors()
 
 # 2. Load the pre-trained MLP model, scaler, and label encoder
-mlp_model_path = r'D:\PoseMate\mlp_model.pkl'
+mlp_model_path = "your_file_path"
 scaler_path = r'D:\PoseMate\scaler.pkl'
 label_encoder_path = r'D:\PoseMate\label_encoder.pkl'
 
