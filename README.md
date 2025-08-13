@@ -1,63 +1,81 @@
-# 🧍‍♂️ Real-Time Human Pose Classification using MoveNet Lightning
+# 🏋️ AI-Powered Exercise Pose Correction System
 
-This project leverages **TensorFlow Lite MoveNet Lightning** for real-time human pose estimation and a custom-trained **MLP classifier** to classify poses like standing, sitting, and exercising from webcam input.
+A real-time posture evaluation and repetition counter for fitness exercises using **MediaPipe**, **OpenCV**, and **Python**. The system analyzes body movements and provides feedback for form correction and rep counting using geometric analysis.
 
----
+## 📽️ Demo Video & Outputs
 
-## 🚀 Features
-
-- Real-time human pose detection using MoveNet Lightning (TFLite)
-- Custom MLP classifier for pose-based action recognition
-- OpenCV-based live video processing and visualization
-- Dual-display: original feed and black canvas with pose skeleton
-- Smooth classification of common human actions
+🎥 Check all recorded exercise feedback videos and screenshots in the [Google Drive Output Folder](https://drive.google.com/drive/u/0/folders/1y_KiJy0xEEv1PO_oFlzLSNOz7F5B7nVw)
 
 ---
 
-## 🛠️ Tech Stack
+## ✅ Key Features
 
-- **Pose Estimation**: TensorFlow Lite MoveNet Lightning
-- **Machine Learning Model**: MLP (Multi-Layer Perceptron)
-- **Visualization**: OpenCV
-- **Language**: Python
-- **Libraries**: NumPy, Scikit-learn, Pickle
-
----
-
-## 🧠 How It Works
-
-1. Captures live video via webcam using OpenCV.
-2. Runs each frame through the MoveNet Lightning TFLite model to extract 17 keypoints.
-3. Normalizes and flattens the keypoints into a 34-dimensional feature vector.
-4. Feeds the feature vector into a trained MLP classifier.
-5. Displays the predicted pose label on both original and black canvas views.
+- 🔍 Detects pose landmarks using MediaPipe
+- 🔁 Repetition counter with up/down movement logic
+- 🧠 Real-time feedback for form corrections
+- 🔧 Supports both **recorded video input** and **live webcam**
+- 🖼️ Feedback box overlay showing:
+  - Exercise name
+  - Rep counts (left/right)
+  - Elbow/shoulder/knee angles
+  - Encouragement or correction messages
 
 ---
 
-## 🧪 Model Training
+## 🧪 Supported Exercises
 
-- Keypoints from labeled pose data were normalized and used as training data.
-- `StandardScaler` was applied for normalization.
-- Labels were encoded using `LabelEncoder`.
-- Trained an MLP model using Scikit-learn with input shape `(34,)` (17 keypoints × 2).
-- The trained model, scaler, and encoder were saved as `.pkl` files.
-
----
-
-## 🧩 Future Enhancements
-
-- Support for multi-person pose detection
-- Pose tracking across frames
-- Real-time feedback via audio or pop-up suggestions
-- Web-based or mobile deployment
+1. 💪 **Bicep Curls**
+2. 🤸 **Lateral Raises**
+3. 🧎 **Push-Ups**
+4. 🦵 **Lunges**
 
 ---
 
-## 📷 Example Output
+## 📂 Folder Structure
+```
+├── main.py # Real-time / video input runner
+├── exercises/
+│ ├── bicep_curl.py 
+│ ├── lateral_raise.py 
+│ ├── lunge.py
+│ ├── pushup.py 
+│ └── init.py
+├── utils/
+│ ├── pose_extractor.py
+│ ├── feedback_drawer.py 
+│ └── pose_utils.py
+├── requirements.txt
 
-![Screenshot 2025-05-28 153718](https://github.com/user-attachments/assets/a2fe2b22-950f-41ee-b092-d97f50ce0329)
-![Screenshot 2025-05-28 153659](https://github.com/user-attachments/assets/d43f151c-5adc-4b07-b7ff-359abb517b85)
+```
+---
+## ⚙️ How It Works
 
+This system provides real-time exercise feedback using computer vision and pose estimation. Here’s an overview of the main components:
+
+- **Pose Detection**: Utilizes MediaPipe to identify and track key body landmarks.
+- **Angle Calculation**: Computes critical joint angles (elbow, knee, shoulder) for each frame.
+- **Form Evaluation**: Assesses user posture, determines movement phase (e.g., up, down), and provides corrections or encouragement.
+- **Counter**: Increases repetition count only when full-motion and proper transitions are detected.
+- **Visual Feedback**: A dynamic feedback box overlays the video, presenting:
+  - ✅ Pose name
+  - 🔁 Current repetition counts
+  - 💬 Real-time suggestions (like "Raise higher", "Good job", "Fix your posture")
+  - 📐 Live joint angles
 
 ---
+
+### ✨ Sample Feedback Messages
+
+- “Left rep counted”
+- “Pull right arm more”
+- “Great form!”
+- “Standing straight. Prepare to lunge”
+- “Fix your form”
+
+---
+## 📽️ Output Preview
+
+Watch all processed exercise feedback videos here:  
+[All Output Videos – Google Drive](https://drive.google.com/drive/u/0/folders/1y_KiJy0xEEv1PO_oFlzLSNOz7F5B7nVw)
+  
 
